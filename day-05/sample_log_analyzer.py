@@ -1,59 +1,42 @@
-# Day 05 - Log Analyzer (Sample File For your Reference)
-
-class LogAnalyzer:
-    def __init__(self, log_file):
-        """
-        __init__ function runs first and initializes
-        the values into class variables.
-        """
-        self.log_file = log_file
-        self.counts = {"INFO": 0, "WARNING": 0, "ERROR": 0, "UNKNOWN": 0}
-
+import json
+class LogAnalyzer: 
+    def __init__(self,file_name,output_file):
+        self.file_name = file_name
+        self.output_file = output_file
+    
     def read_logs(self):
-        """
-        Function to read logs from the given log file
-        """
-        try:
-            with open(self.log_file, "r") as f:
-                return f.readlines()
-        except FileNotFoundError:
-            print("Log file not found:", self.log_file)
-            return []
+        with open(self.file_name,"r") as file:
+            return file.readlines()
+        
+    def write_json(self,counts):
+        with open(self.output_file,"w+") as json_file:
+            json.dump(counts,json_file)
 
-    def analyze(self, lines):
-        """
-        Analyzer to count the error patterns & Counts
-        """
+    def analyze(self):
+        log_count = {
+            "INFO": 0,
+            "WARNING": 0,
+            "ERROR": 0
+        }
+        lines = self.read_logs()
+
         for line in lines:
             if "INFO" in line:
-                self.counts["INFO"] += 1
-            elif "WARNING" in line:
-                self.counts["WARNING"] += 1
-            elif "ERROR" in line:
-                self.counts["ERROR"] += 1
+                log_count.update({"INFO": log_count["INFO"]+1})
+            if "WARNING" in line:
+                log_count.update({"WARNING": log_count["WARNING"]+1})
+            if "ERROR" in line:
+                log_count.update({"ERROR": log_count["ERROR"]+1})
             else:
-                self.counts["UNKNOWN"] += 1
+                pass
 
-        return self.counts
-
-
-def main():
-    """
-    Main Function as a single entrypoint to the program
-    """
-    analyzer = LogAnalyzer("app.log")
-    lines = analyzer.read_logs()
-
-    if not lines:
-        print("No logs to analyze.")
-        return
-
-    result = analyzer.analyze(lines)
-
-    print("Log Analysis Summary:")
-    for level, count in result.items():
-        print(f"{level}: {count}")
+        self.write_json(log_count)
 
 
-if __name__ == "__main__":
-    main()
+log_1 = LogAnalyzer("app2.log","output2.json",)
+log_count = log_1.analyze()
+
+log_1 = LogAnalyzer("app2.log","output2.json")
+log_count = log_1.analyze
+
+
