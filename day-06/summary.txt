@@ -1,0 +1,5 @@
+{
+  "INFO": 0,
+  "WARNING": 32,
+  "ERROR": 0
+}
