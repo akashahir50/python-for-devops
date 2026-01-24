@@ -1,0 +1,11 @@
+{
+  "ec2_instances": [
+    {
+      "InstanceId": "i-0e0c6810adbd36bb8",
+      "Name": "demo"
+    }
+  ],
+  "s3_buckets": [
+    "new-demo-python-bucket"
+  ]
+}
