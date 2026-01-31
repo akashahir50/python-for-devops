@@ -2,7 +2,7 @@
 
 ##  STAR Method
 
-**SITUATION**: 
+**S- SITUATION**: 
 
 -> Traditional log analysis was manual and time-consuming, with logs growing daily across DevOps pipelines.
 
