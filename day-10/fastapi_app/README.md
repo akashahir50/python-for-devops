@@ -30,6 +30,7 @@ Enable quick, remote access to log insights for DevOps teams without CLI depende
 ---
 **RESULT**: 
 • Manual log hunts dropped from hours to seconds. Now anyone can hit the API, upload a log file, and get a neat breakdown of errors by level.
+
 •  80% time saved, instant JSON insights via browser/curl/Postman  
 
 ## Quick Start
