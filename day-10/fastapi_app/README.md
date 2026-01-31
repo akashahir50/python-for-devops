@@ -2,20 +2,20 @@
 
 ##  STAR Method
 
-**SITUATION**: 
+**S- SITUATION**: 
 
 -> Traditional log analysis was manual and time-consuming, with logs growing daily across DevOps pipelines.
 
 -> No easy way to query errors or metrics remotely, leading to delays in troubleshooting.
 
 ---
-**TASK**:
+**T- TASK**:
 
 Build an automated solution to parse logs and expose error analysis via a web API.
 Enable quick, remote access to log insights for DevOps teams without CLI dependency.
 
 ---
-**ACTION**: 
+**A- ACTION**: 
 
 • Created a FastAPI app to handle log uploads and parsing.
 
@@ -28,7 +28,7 @@ Enable quick, remote access to log insights for DevOps teams without CLI depende
 • Created FastAPI with log analyzer (/logs), health checks (/health), AWS summary (/aws)  
 
 ---
-**RESULT**: 
+**R- RESULT**: 
 
 • Manual log hunts dropped from hours to seconds. Now anyone can hit the API, upload a log file, and get a neat breakdown of errors by level.
 
