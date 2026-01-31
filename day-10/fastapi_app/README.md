@@ -1,6 +1,6 @@
 #  FastAPI 
 
-## 🎯 STAR Method
+##  STAR Method
 
 **SITUATION**: 
 
